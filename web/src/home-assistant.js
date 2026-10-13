@@ -162,28 +162,6 @@ function Icon({ d }) {
 }
 const ICONS = { up: 'M6 15l6-6 6 6', down: 'M6 9l6 6 6-6', edit: 'M4 20h4L19 9l-4-4L4 16v4z', remove: 'M6 6l12 12M18 6 6 18' };
 
-const STORE = `${ROOT}.sections`;
-function loadJson(key) {
-  try { return JSON.parse(localStorage.getItem(key) || '{}') || {}; } catch { return {}; }
-}
-function saveJson(key, v) {
-  try { localStorage.setItem(key, JSON.stringify(v)); } catch { /* storage unavailable */ }
-}
-
-// A card with a button header that collapses its body.
-function Section({ id, title, summary, open, onToggle, children }) {
-  const expanded = !!open;
-  const bodyId = `${ROOT}-${id}`;
-  return h('section', { className: `zha-card zha-section${expanded ? '' : ' collapsed'}` },
-    h('button', {
-      type: 'button', className: 'zha-toggle', 'aria-expanded': expanded, 'aria-controls': bodyId, onClick: onToggle,
-    },
-      h('span', { className: 'zha-chev', 'aria-hidden': 'true' }),
-      h('span', { className: 'zha-label' }, title),
-      !expanded && summary ? h('span', { className: 'zha-summary' }, summary) : null),
-    expanded ? h('div', { id: bodyId, className: 'zha-body' }, children) : null);
-}
-
 // ------------------------------------------------------------------ tile editor (settings)
 
 // Draft tiles hold strings for number boxes so half-typed values survive re-renders.
@@ -324,7 +302,6 @@ function Panel({ api }) {
   const [loadError, setLoadError] = React.useState(null);
   const [msg, setMsg] = React.useState({ text: '', err: false });
   const [view, setView] = React.useState('main');            // 'main' | 'settings'
-  const [openMap, setOpenMap] = React.useState(() => loadJson(STORE));
   const [armed, setArmed] = React.useState(null);            // { id, until } for "press twice" tiles
   const [busy, setBusy] = React.useState({});                // tile id -> true while a command is in flight
   const [flash, setFlash] = React.useState(null);            // button tile that just fired
@@ -412,13 +389,6 @@ function Panel({ api }) {
       setTimeout(() => setFlash((f) => (f === t.id ? null : f)), 700);
     }
   };
-
-  const isOpen = (id, dflt) => (openMap[id] === undefined ? dflt : !!openMap[id]);
-  const flip = (id, dflt) => () => setOpenMap((m) => {
-    const next = { ...m, [id]: !(m[id] === undefined ? dflt : m[id]) };
-    saveJson(STORE, next);
-    return next;
-  });
 
   if (!status) {
     return h('div', { className: ROOT },
@@ -573,7 +543,6 @@ function Panel({ api }) {
     }, t.lockTx && tx ? h(Lock) : null, isArmed ? `Confirm ${tileName(t)}?` : tileName(t));
   };
 
-  const onNames = controls.filter((t) => t.on).map(tileName);
   const unconfigured = c.state === 'unconfigured' || c.state === 'no_token';
 
   return h('div', { className: ROOT },
@@ -595,10 +564,8 @@ function Panel({ api }) {
       readouts.length ? h('div', { className: 'zha-readouts auto' }, readouts.map((t) => h(Readout, { key: t.id, t }))) : null,
       msg.text ? h('div', { className: `zha-msg${msg.err ? ' err' : ''}`, role: 'status', 'aria-live': 'polite' }, msg.text) : null),
 
-    groups.length ? h(Section, {
-      id: 'controls', title: 'Controls', open: isOpen('controls', true), onToggle: flip('controls', true),
-      summary: [onNames.length ? `${onNames.join(', ')} on` : 'All off', tx && anyLocked ? 'Locked (TX)' : ''].filter(Boolean).join(' · '),
-    },
+    // Controls sit in a plain card (no collapse): group names are the only headings needed.
+    groups.length ? h('section', { className: 'zha-card', 'aria-label': 'Controls' },
       groups.map((g) => h('div', { key: g.name, className: 'zha-group' },
         h('h2', { className: 'zha-label' }, g.name),
         h('div', { className: 'zha-row', role: 'group', 'aria-label': g.name }, g.tiles.map(tileButton)))),

@@ -36,17 +36,7 @@
 .com-n1mjf-homeassistant .zha-msg.err { color: var(--amber); }
 .com-n1mjf-homeassistant .zha-empty { color: var(--fg-2); font-size: 13px; padding: 6px 0; margin: 0; }
 @media (prefers-reduced-motion: reduce) { .com-n1mjf-homeassistant .zha-bar > i, .com-n1mjf-homeassistant button { transition: none; } }
-.com-n1mjf-homeassistant .zha-section { gap: 0; padding: 0; }
-.com-n1mjf-homeassistant .zha-section.collapsed { background: var(--bg-1); }
-.com-n1mjf-homeassistant .zha-body { display: grid; gap: 10px; padding: 2px 12px 12px; }
 .com-n1mjf-homeassistant .zha-form { display: grid; gap: 8px; }
-.com-n1mjf-homeassistant button.zha-toggle { display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; text-transform: none; letter-spacing: normal; background: transparent; border: 0; border-radius: var(--r-md); padding: 9px 12px; min-height: 36px; font-weight: 400; }
-.com-n1mjf-homeassistant button.zha-toggle:hover:not(:disabled) { background: var(--bg-2); border-color: transparent; }
-.com-n1mjf-homeassistant button.zha-toggle:disabled { opacity: 1; cursor: default; }
-.com-n1mjf-homeassistant .zha-chev { width: 7px; height: 7px; border-right: 2px solid var(--fg-2); border-bottom: 2px solid var(--fg-2); transform: rotate(-45deg); transition: transform var(--dur-fast) var(--ease-out); flex: none; }
-.com-n1mjf-homeassistant button[aria-expanded="true"] .zha-chev { transform: rotate(45deg); }
-.com-n1mjf-homeassistant .zha-summary { margin-left: auto; font-family: var(--font-mono); font-size: 11px; color: var(--fg-2); text-align: right; overflow-wrap: anywhere; }
-@media (prefers-reduced-motion: reduce) { .com-n1mjf-homeassistant .zha-chev { transition: none; } }
 .com-n1mjf-homeassistant .zha-head-end { display: flex; align-items: center; gap: 8px; }
 .com-n1mjf-homeassistant button.zha-icon { display: inline-flex; align-items: center; justify-content: center; padding: 0; width: 30px; min-height: 30px; color: var(--fg-2); background: transparent; border-color: var(--line); }
 .com-n1mjf-homeassistant button.zha-icon:hover:not(:disabled) { color: var(--fg-0); }
