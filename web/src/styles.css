@@ -1,0 +1,130 @@
+.com-n1mjf-homeassistant { font-family: var(--font-sans); color: var(--fg-1); background: transparent; padding: 10px; display: grid; gap: 10px; box-sizing: border-box; align-content: start; height: 100%; max-height: 100%; min-height: 0; overflow-x: hidden; overflow-y: auto; }
+.com-n1mjf-homeassistant *, .com-n1mjf-homeassistant *::before, .com-n1mjf-homeassistant *::after { box-sizing: border-box; }
+.com-n1mjf-homeassistant .zha-card { background: linear-gradient(180deg, var(--panel-top), var(--panel-bot)); border: 1px solid var(--panel-border); border-radius: var(--r-md); padding: 10px 12px; display: grid; gap: 8px; }
+.com-n1mjf-homeassistant .zha-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.com-n1mjf-homeassistant .zha-title { margin: 0; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--fg-1); }
+.com-n1mjf-homeassistant .zha-label { margin: 0; font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--fg-3); }
+.com-n1mjf-homeassistant .zha-pill { display: inline-flex; align-items: center; gap: 6px; padding: 2px 9px; border-radius: var(--r-lg); border: 1px solid var(--line-strong); background: var(--bg-inset); font-size: 11px; color: var(--fg-1); }
+.com-n1mjf-homeassistant .zha-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--fg-3); }
+.com-n1mjf-homeassistant .zha-pill.ok::before { background: var(--ok); }
+.com-n1mjf-homeassistant .zha-pill.warn::before { background: var(--amber); }
+.com-n1mjf-homeassistant .zha-pill.tx { color: var(--tx); border-color: var(--tx); }
+.com-n1mjf-homeassistant .zha-pill.tx::before { background: var(--tx); }
+.com-n1mjf-homeassistant .zha-meters { display: grid; gap: 5px; }
+.com-n1mjf-homeassistant .zha-meter { display: grid; gap: 3px; }
+.com-n1mjf-homeassistant .zha-meter-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.com-n1mjf-homeassistant .zha-meter .val { font-family: var(--font-mono); font-size: 15px; font-weight: 600; color: var(--fg-0); font-variant-numeric: tabular-nums; }
+.com-n1mjf-homeassistant .zha-meter .unit { font-size: 10px; color: var(--fg-3); margin-left: 3px; }
+.com-n1mjf-homeassistant .zha-readouts { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 1fr); gap: 6px; align-items: stretch; }
+.com-n1mjf-homeassistant .zha-read { background: var(--bg-inset); border: 1px solid var(--line); border-radius: var(--r-sm); padding: 6px 8px; display: grid; gap: 3px; }
+.com-n1mjf-homeassistant .zha-read .v { font-family: var(--font-mono); font-size: 17px; font-weight: 600; color: var(--fg-0); font-variant-numeric: tabular-nums; }
+.com-n1mjf-homeassistant .zha-read .v.warn { color: var(--amber); }
+.com-n1mjf-homeassistant .zha-group { display: grid; gap: 6px; }
+.com-n1mjf-homeassistant .zha-row { display: flex; flex-wrap: wrap; gap: 5px; }
+.com-n1mjf-homeassistant button { font: inherit; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--fg-1); background: var(--bg-3); border: 1px solid var(--line-strong); border-radius: var(--r-sm); padding: 5px 11px; min-height: 30px; cursor: pointer; transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out); }
+.com-n1mjf-homeassistant button:hover:not(:disabled) { background: var(--bg-2); border-color: var(--accent); color: var(--fg-0); }
+.com-n1mjf-homeassistant button[aria-pressed="true"] { background: var(--accent); color: var(--bg-0); border-color: var(--accent-bright); }
+.com-n1mjf-homeassistant button.zha-warn[aria-pressed="true"] { background: var(--amber); border-color: var(--amber); }
+.com-n1mjf-homeassistant button:disabled { opacity: .45; cursor: not-allowed; }
+.com-n1mjf-homeassistant button:focus-visible, .com-n1mjf-homeassistant input:focus-visible { outline: 2px solid var(--accent-bright); outline-offset: 2px; }
+.com-n1mjf-homeassistant input[type="text"] { font: inherit; font-family: var(--font-mono); font-size: 13px; color: var(--fg-0); background: var(--bg-inset); border: 1px solid var(--line-strong); border-radius: var(--r-sm); padding: 5px 8px; min-height: 30px; min-width: 0; flex: 1 1 150px; }
+.com-n1mjf-homeassistant select { font: inherit; font-family: var(--font-mono); font-size: 13px; color: var(--fg-0); background: var(--bg-inset); border: 1px solid var(--line-strong); border-radius: var(--r-sm); padding: 4px 6px; min-height: 30px; min-width: 0; max-width: 200px; }
+.com-n1mjf-homeassistant label.zha-check { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--fg-1); }
+.com-n1mjf-homeassistant input[type="checkbox"] { accent-color: var(--accent); }
+.com-n1mjf-homeassistant .zha-note { font-size: 11px; color: var(--fg-3); margin: 0; }
+.com-n1mjf-homeassistant .zha-msg { font-size: 12px; min-height: 16px; color: var(--fg-1); }
+.com-n1mjf-homeassistant .zha-msg.err { color: var(--amber); }
+.com-n1mjf-homeassistant .zha-empty { color: var(--fg-2); font-size: 13px; padding: 6px 0; margin: 0; }
+@media (prefers-reduced-motion: reduce) { .com-n1mjf-homeassistant .zha-bar > i, .com-n1mjf-homeassistant button { transition: none; } }
+.com-n1mjf-homeassistant .zha-section { gap: 0; padding: 0; }
+.com-n1mjf-homeassistant .zha-section.collapsed { background: var(--bg-1); }
+.com-n1mjf-homeassistant .zha-body { display: grid; gap: 10px; padding: 2px 12px 12px; }
+.com-n1mjf-homeassistant .zha-form { display: grid; gap: 8px; }
+.com-n1mjf-homeassistant button.zha-toggle { display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; text-transform: none; letter-spacing: normal; background: transparent; border: 0; border-radius: var(--r-md); padding: 9px 12px; min-height: 36px; font-weight: 400; }
+.com-n1mjf-homeassistant button.zha-toggle:hover:not(:disabled) { background: var(--bg-2); border-color: transparent; }
+.com-n1mjf-homeassistant button.zha-toggle:disabled { opacity: 1; cursor: default; }
+.com-n1mjf-homeassistant .zha-chev { width: 7px; height: 7px; border-right: 2px solid var(--fg-2); border-bottom: 2px solid var(--fg-2); transform: rotate(-45deg); transition: transform var(--dur-fast) var(--ease-out); flex: none; }
+.com-n1mjf-homeassistant button[aria-expanded="true"] .zha-chev { transform: rotate(45deg); }
+.com-n1mjf-homeassistant .zha-summary { margin-left: auto; font-family: var(--font-mono); font-size: 11px; color: var(--fg-2); text-align: right; overflow-wrap: anywhere; }
+@media (prefers-reduced-motion: reduce) { .com-n1mjf-homeassistant .zha-chev { transition: none; } }
+.com-n1mjf-homeassistant .zha-head-end { display: flex; align-items: center; gap: 8px; }
+.com-n1mjf-homeassistant button.zha-icon { display: inline-flex; align-items: center; justify-content: center; padding: 0; width: 30px; min-height: 30px; color: var(--fg-2); background: transparent; border-color: var(--line); }
+.com-n1mjf-homeassistant button.zha-icon:hover:not(:disabled) { color: var(--fg-0); }
+.com-n1mjf-homeassistant .zha-read.big .v { font-size: 24px; line-height: 1.1; }
+.com-n1mjf-homeassistant .zha-read.z-ok .v { color: var(--ok); }
+.com-n1mjf-homeassistant .zha-read.z-warn .v { color: var(--amber); }
+.com-n1mjf-homeassistant .zha-read.z-bad .v { color: var(--tx); }
+.com-n1mjf-homeassistant .zha-zone { margin-left: 6px; padding: 0 5px; border: 1px solid currentColor; border-radius: var(--r-xs); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
+.com-n1mjf-homeassistant .zha-zone.warn { color: var(--amber); }
+.com-n1mjf-homeassistant .zha-zone.bad { color: var(--tx); }
+.com-n1mjf-homeassistant .zha-meter-head .zha-zone { margin-right: auto; }
+.com-n1mjf-homeassistant .zha-card.faulted { border-color: var(--tx); }
+.com-n1mjf-homeassistant .zha-fault { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border: 1px solid var(--tx); border-left-width: 4px; border-radius: var(--r-sm); background: var(--bg-inset); color: var(--fg-0); }
+.com-n1mjf-homeassistant .zha-fault-icon { flex: none; color: var(--tx); }
+.com-n1mjf-homeassistant .zha-fault-text { display: grid; gap: 2px; flex: 1 1 160px; min-width: 0; font-size: 12px; }
+.com-n1mjf-homeassistant .zha-fault-text strong { color: var(--tx); font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+.com-n1mjf-homeassistant .zha-fault-text span { color: var(--fg-1); }
+.com-n1mjf-homeassistant .zha-fault button { flex: none; border-color: var(--tx); }
+.com-n1mjf-homeassistant .zha-range { display: grid; gap: 5px; padding: 8px 0; border-top: 1px solid var(--line); }
+.com-n1mjf-homeassistant .zha-range-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.com-n1mjf-homeassistant .zha-range-name { font-size: 12px; font-weight: 700; color: var(--fg-0); }
+.com-n1mjf-homeassistant .zha-range-name .unit { font-weight: 400; color: var(--fg-3); }
+.com-n1mjf-homeassistant .zha-range-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(68px, 1fr)); gap: 6px; }
+.com-n1mjf-homeassistant .zha-num { display: grid; gap: 2px; min-width: 0; }
+.com-n1mjf-homeassistant .zha-grow { flex: 1 1 140px; }
+.com-n1mjf-homeassistant .zha-chime-row { align-items: end; }
+.com-n1mjf-homeassistant input[type="number"] { font: inherit; font-family: var(--font-mono); font-size: 13px; color: var(--fg-0); background: var(--bg-inset); border: 1px solid var(--line-strong); border-radius: var(--r-sm); padding: 4px 6px; min-height: 30px; min-width: 0; width: 100%; }
+.com-n1mjf-homeassistant input[type="number"][aria-invalid="true"] { border-color: var(--amber); }
+.com-n1mjf-homeassistant input[type="range"] { accent-color: var(--accent); width: 100%; min-height: 24px; }
+.com-n1mjf-homeassistant .zha-strip { height: 6px; border-radius: var(--r-xs); border: 1px solid var(--line); }
+
+/* LED-style bar. ::before is the dim full-scale track, i the lit part (clipped to the value), ::after the segment gaps. */
+.com-n1mjf-homeassistant .zha-bar { --zha-fill: var(--accent); position: relative; height: 8px; background: var(--bg-inset); border: 1px solid var(--line); border-radius: var(--r-xs); overflow: hidden; }
+.com-n1mjf-homeassistant .zha-bar.banded { --zha-fill: linear-gradient(90deg, var(--ok) 0, var(--ok) var(--wp), var(--amber) var(--wp), var(--amber) var(--bp), var(--tx) var(--bp), var(--tx) 100%); }
+.com-n1mjf-homeassistant .zha-bar.z-ok { --zha-fill: var(--ok); }
+.com-n1mjf-homeassistant .zha-bar.z-warn { --zha-fill: var(--amber); }
+.com-n1mjf-homeassistant .zha-bar.z-bad { --zha-fill: var(--tx); }
+.com-n1mjf-homeassistant .zha-bar.stale { --zha-fill: var(--fg-3); }
+.com-n1mjf-homeassistant .zha-bar::before { content: ""; position: absolute; inset: 0; background: var(--zha-fill); opacity: .22; }
+.com-n1mjf-homeassistant .zha-bar > i { position: absolute; inset: 0; display: block; background: var(--zha-fill); transition: clip-path var(--dur-fast) var(--ease-out); }
+.com-n1mjf-homeassistant .zha-bar > i::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, var(--fg-0), transparent 60%); opacity: .2; }
+.com-n1mjf-homeassistant .zha-bar::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: repeating-linear-gradient(90deg, transparent 0, transparent 2px, var(--bg-inset) 2px, var(--bg-inset) 3px); opacity: .7; }
+.com-n1mjf-homeassistant .zha-notch { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--tx); z-index: 3; opacity: .9; }
+.com-n1mjf-homeassistant .zha-tip { position: absolute; top: 0; bottom: 0; width: 2px; margin-left: -2px; background: var(--fg-0); z-index: 3; opacity: .9; transition: left var(--dur-fast) var(--ease-out); }
+.com-n1mjf-homeassistant .zha-bar.stale .zha-tip { opacity: .4; }
+.com-n1mjf-homeassistant .zha-peak { position: absolute; top: 0; bottom: 0; width: 2px; margin-left: -1px; background: var(--fg-0); z-index: 4; }
+@media (prefers-reduced-motion: reduce) { .com-n1mjf-homeassistant .zha-bar > i, .com-n1mjf-homeassistant .zha-tip { transition: none; } }
+
+/* ---- Home Assistant additions (same tokens and shapes as the amplifier panel) ---- */
+.com-n1mjf-homeassistant .zha-bar.banded-low { --zha-fill: linear-gradient(90deg, var(--tx) 0, var(--tx) var(--bp), var(--amber) var(--bp), var(--amber) var(--wp), var(--ok) var(--wp), var(--ok) 100%); }
+.com-n1mjf-homeassistant .zha-readouts.auto { grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); }
+.com-n1mjf-homeassistant .zha-read .k { overflow-wrap: anywhere; line-height: 1.35; }
+.com-n1mjf-homeassistant .zha-read .v { overflow-wrap: anywhere; }
+.com-n1mjf-homeassistant .zha-read .v .unit { font-size: 11px; color: var(--fg-3); margin-left: 3px; font-weight: 400; }
+.com-n1mjf-homeassistant .zha-read.off .v, .com-n1mjf-homeassistant .zha-read.na .v { color: var(--fg-2); }
+.com-n1mjf-homeassistant .zha-read.on .v { color: var(--accent-bright); }
+.com-n1mjf-homeassistant .zha-meter .zha-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.com-n1mjf-homeassistant button.zha-arm { background: var(--bg-inset); border-color: var(--amber); color: var(--amber); }
+.com-n1mjf-homeassistant button.zha-flash { background: var(--accent); color: var(--bg-0); border-color: var(--accent-bright); }
+.com-n1mjf-homeassistant button.zha-na { text-decoration: line-through; }
+.com-n1mjf-homeassistant .zha-lock { display: inline-flex; vertical-align: -2px; margin-right: 5px; color: var(--fg-3); }
+.com-n1mjf-homeassistant button[aria-pressed="true"] .zha-lock { color: var(--bg-0); }
+.com-n1mjf-homeassistant input[type="password"], .com-n1mjf-homeassistant input[type="search"] { font: inherit; font-family: var(--font-mono); font-size: 13px; color: var(--fg-0); background: var(--bg-inset); border: 1px solid var(--line-strong); border-radius: var(--r-sm); padding: 5px 8px; min-height: 30px; min-width: 0; flex: 1 1 150px; width: 100%; }
+.com-n1mjf-homeassistant input[type="password"]:focus-visible, .com-n1mjf-homeassistant input[type="search"]:focus-visible, .com-n1mjf-homeassistant select:focus-visible { outline: 2px solid var(--accent-bright); outline-offset: 2px; }
+.com-n1mjf-homeassistant .zha-list { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.com-n1mjf-homeassistant .zha-item { display: grid; gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--line); }
+.com-n1mjf-homeassistant .zha-item-row { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.com-n1mjf-homeassistant .zha-item-text { display: grid; gap: 1px; min-width: 0; flex: 1 1 auto; }
+.com-n1mjf-homeassistant .zha-item-name { font-size: 12px; font-weight: 700; color: var(--fg-0); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.com-n1mjf-homeassistant .zha-item-id { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.com-n1mjf-homeassistant .zha-kind { flex: none; font-family: var(--font-mono); font-size: 9px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--fg-2); border: 1px solid var(--line-strong); border-radius: var(--r-xs); padding: 1px 5px; }
+.com-n1mjf-homeassistant button.zha-icon { flex: none; width: 28px; min-height: 28px; padding: 0; display: inline-flex; align-items: center; justify-content: center; color: var(--fg-2); background: transparent; border-color: var(--line); }
+.com-n1mjf-homeassistant button.zha-icon:hover:not(:disabled) { color: var(--fg-0); }
+.com-n1mjf-homeassistant .zha-editor { display: grid; gap: 8px; padding: 8px 10px 10px; background: var(--bg-inset); border: 1px solid var(--line); border-radius: var(--r-sm); }
+.com-n1mjf-homeassistant .zha-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 6px; }
+.com-n1mjf-homeassistant .zha-results { display: grid; max-height: 260px; overflow-y: auto; border: 1px solid var(--line); border-radius: var(--r-sm); background: var(--bg-inset); }
+.com-n1mjf-homeassistant button.zha-result { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 36px; text-align: left; text-transform: none; letter-spacing: normal; font-weight: 400; background: transparent; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 5px 8px; }
+.com-n1mjf-homeassistant button.zha-result:last-child { border-bottom: 0; }
+.com-n1mjf-homeassistant button.zha-result:hover:not(:disabled) { background: var(--bg-2); border-color: var(--line); }
+.com-n1mjf-homeassistant button.zha-result:disabled { opacity: .55; }
+.com-n1mjf-homeassistant .zha-result-state { margin-left: auto; flex: none; max-width: 40%; font-family: var(--font-mono); font-size: 11px; color: var(--fg-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

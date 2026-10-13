@@ -1,0 +1,9 @@
+bin/
+obj/
+web/dist/
+node_modules/
+artifacts/
+.zeus-build/
+src/Zeus.Community.HomeAssistant/ui/
+tests/harness/vendor/
+tests/harness/home-assistant.js

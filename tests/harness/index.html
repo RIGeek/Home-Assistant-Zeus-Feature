@@ -1,0 +1,47 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: GPL-2.0-or-later -->
+<!-- Stand-in for the Zeus host: theme tokens, React, and api.callBackend, so the panel's real
+     module can run in a plain browser against the dev host (see README, "Try the panel"). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home Assistant panel harness</title>
+<style>
+  :root {
+    --font-sans: Inter, "Segoe UI", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", "Cascadia Mono", ui-monospace, monospace;
+    --bg-0: #0b0f14; --bg-1: #10161d; --bg-2: #1a222c; --bg-3: #1d2630; --bg-inset: #0a0e13;
+    --panel-top: #141b23; --panel-bot: #10161d; --panel-border: #253040;
+    --fg-0: #f2f5f8; --fg-1: #d3dae2; --fg-2: #9aa6b3; --fg-3: #6f7b88;
+    --line: #232d39; --line-strong: #33404f;
+    --accent: #2d6aa8; --accent-bright: #4f93d8;
+    --ok: #35c46a; --amber: #f0a33a; --tx: #ef4b55;
+    --r-xs: 3px; --r-sm: 6px; --r-md: 9px; --r-lg: 999px;
+    --dur-fast: 120ms; --ease-out: cubic-bezier(.2, .8, .2, 1);
+  }
+  html, body { margin: 0; background: var(--bg-0); }
+  #panel { width: 420px; height: 100vh; }
+</style>
+<script src="./vendor/react.production.min.js"></script>
+<script src="./vendor/react-dom.production.min.js"></script>
+<script type="importmap">{ "imports": { "react": "./react-shim.js" } }</script>
+</head>
+<body>
+<div id="panel"></div>
+<script type="module">
+  import register from './home-assistant.js';
+  const base = '/api/plugins/com.n1mjf.homeassistant';
+  let Component = null;
+  register({
+    callBackend: (method, path, body) => fetch(base + path, {
+      method,
+      headers: body === undefined ? {} : { 'Content-Type': 'application/json' },
+      body: body === undefined ? undefined : JSON.stringify(body),
+    }),
+    registerPanel: (p) => { Component = p.component; },
+  });
+  ReactDOM.createRoot(document.getElementById('panel')).render(React.createElement(Component));
+</script>
+</body>
+</html>

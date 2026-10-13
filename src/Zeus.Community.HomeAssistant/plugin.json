@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "com.n1mjf.homeassistant",
+  "name": "Home Assistant",
+  "version": "0.1.0",
+  "author": "N1MJF",
+  "description": "Buttons, switches and sensor readouts for Home Assistant entities, inside Zeus.",
+  "homepage": "https://github.com/RIGeek/Home-Assistant-Zeus-Feature",
+  "license": "GPL-2.0-or-later",
+  "sdk": { "abi": 1, "minVersion": "1.5.0" },
+  "entrypoint": {
+    "assembly": "Zeus.Community.HomeAssistant.dll",
+    "type": "Zeus.Community.HomeAssistant.HomeAssistantPlugin"
+  },
+  "capabilities": ["NetworkAccess", "ReadRadioState", "PersistSettings"],
+  "permissions": {
+    "network": true,
+    "fileSystemRead": false,
+    "fileSystemWrite": false
+  },
+  "ui": {
+    "modules": ["ui/home-assistant.js"],
+    "panels": [
+      {
+        "id": "home-assistant",
+        "title": "Home Assistant",
+        "slot": "workspace.home-assistant",
+        "category": "controls"
+      }
+    ]
+  }
+}

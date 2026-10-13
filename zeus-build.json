@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "dotnet": {
+    "project": "src/Zeus.Community.HomeAssistant/Zeus.Community.HomeAssistant.csproj",
+    "configuration": "Release"
+  },
+  "node": [
+    { "directory": "web", "script": "build" }
+  ],
+  "package": {
+    "plugin.json": "src/Zeus.Community.HomeAssistant/plugin.json",
+    "LICENSE": "LICENSE",
+    "THIRD-PARTY-NOTICES.txt": "THIRD-PARTY-NOTICES.txt",
+    "ui/home-assistant.js": "web/dist/home-assistant.js"
+  }
+}
